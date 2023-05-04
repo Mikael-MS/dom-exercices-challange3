@@ -7,7 +7,9 @@ function removeSpaceText(textInput) {
 }
 
 function convertertPriceToNumber(priceInput) {
-  !priceInput ? 0: priceInput;
+  if(!priceInput){
+    return 0
+  }
   const removeSpace = priceInput.trim();
   const separateArray = removeSpace.split(' ')[1];
   const removeDot = separateArray.replace('.', '');
@@ -16,7 +18,9 @@ function convertertPriceToNumber(priceInput) {
 }
 
 function numberOfNights(nightsInput) {
-  !nightsInput ? 0 : nightsInput;
+  if(!nightsInput) {
+    return 0
+  }
   const nightsNum = nightsInput.slice(39, 40);
   return  Number(nightsNum);
 }
